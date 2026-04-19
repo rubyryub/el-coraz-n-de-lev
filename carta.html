@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>El corazón de Lev</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: sans-serif;
+            color: white;
+            text-align: center;
+
+            background: url("fondo.jpg") center / cover no-repeat fixed;
+        }
+
+        /* Capa oscura */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: -1;
+        }
+
+        h1 {
+            margin-top: 80px;
+            font-size: 40px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        .carta {
+            margin: 50px auto;
+            padding: 25px;
+            max-width: 600px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 12px;
+            line-height: 1.6;
+            font-size: 18px;
+
+            opacity: 0;
+            animation: fadeIn 4s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #222;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>el brillo de mis ojos</h1>
+
+    <!-- botón para iniciar -->
+    <button onclick="iniciar()">tócame…</button>
+
+    <!-- música -->
+    <audio id="musica" loop>
+        <source src="Made in Japan.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- carta -->
+    <div class="carta">
+        <p>Mi alma reposará en ti.</p>
+
+        <p>
+            No sé cómo explicarlo sin que suene torpe…  
+            pero hay algo en ti que me calma, incluso cuando todo lo demás pesa.
+        </p>
+
+        <p>
+            A veces siento que podría quedarme en silencio a tu lado…  
+            y aún así, no faltaría nada.
+        </p>
+
+        <p>
+            Si esto es lo que llaman querer a alguien…  
+            entonces supongo que ya no hay vuelta atrás.
+        </p>
+
+        <p>
+            deseo que nuestras almas descansen juntas.
+        </p>
+    </div>
+
+    <script>
+        function iniciar() {
+            document.getElementById("musica").play();
+        }
+    </script>
+
+</body>
+</html>
